@@ -15,7 +15,7 @@ rows: [
 const messages = [[ // CARRUSEL 1
 'Descripción de Carrusel 1', 
 'Footer de Carrusel 1',
-'https://telegra.ph/file/24b24c495b5384b218b2f.jpg',
+'https://telegra.ph/file/d8d292eb0b2a3829e6720.png',
 [['Botón1', usedPrefix + 'menu'], ['Botón2', 'Id2'] /* etc... */],
 [['Texto para copiar 1'], ['Texto para copiar 2'] /* etc... */],
 [['Enlace1', canal2], ['Enlace2', 'https://example.com/link2'] /* etc... */],
@@ -23,7 +23,7 @@ const messages = [[ // CARRUSEL 1
 ], [ // CARRUSEL 2
 'Descripción de Carrusel 2',
 'Footer de Carrusel 2',
-'https://telegra.ph/file/e9239fa926d3a2ef48df2.jpg',
+'https://telegra.ph/file/d8d292eb0b2a3829e6720.png',
 [['Botón1', 'Id1'], ['Botón2', 'Id2']],
 [['Texto para copiar 1'], ['Texto para copiar 2']],
 [['Enlace1', 'https://example.com/link1'], ['Enlace2', 'https://example.com/link2']],
@@ -31,7 +31,7 @@ const messages = [[ // CARRUSEL 1
 ], [ // CARRUSEL 3
 'Descripción de Carrusel 3',
 'Footer de Carrusel 3',
-'https://telegra.ph/file/ec725de5925f6fb4d5647.jpg',
+'https://telegra.ph/file/d8d292eb0b2a3829e6720.png',
 [['Botón1', 'Id1'], ['Botón2', 'Id2']],
 [['Texto para copiar 1'], ['Texto para copiar 2']],
 [['Enlace1', 'https://example.com/link1'], ['Enlace2', 'https://example.com/link2']],
@@ -39,7 +39,7 @@ const messages = [[ // CARRUSEL 1
 ], [ // CARRUSEL 4
 'Descripción de Carrusel 4',
 'Footer de Carrusel 4',
-'https://telegra.ph/file/7acad0975febb71446da5.jpg',
+'https://telegra.ph/file/d8d292eb0b2a3829e6720.png',
 [['Botón1', 'Id1'], ['Botón2', 'Id2']],
 [['Texto para copiar 1'], ['Texto para copiar 2']],
 [['Enlace1', 'https://example.com/link1'], ['Enlace2', 'https://example.com/link2']],

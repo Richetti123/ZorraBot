@@ -118,8 +118,6 @@ description: "Infórmate por medios oficiales sobre MichiBot",
 sections: [
 { title: "ℹ️ Información", highlight_label: "Popular",
 rows: [
-{ header: "✅ Redes", title: "🔓 Para: Todos", description: "Infórmate por medios oficiales sobre MichiBot", id: usedPrefix + "cuentasgb" },
-{ header: "📢 Grupos/Canales", title: "🔓 Para: Todos", description: "¡Te esperamos!", id: usedPrefix + "grupos" },
 { header: "💸 Comprar", title: "🔓 Para: Todos", description: "MichiBot se mantiene funcionando gracias a que lo compran, tu tambien puedes adquirirlo", id: usedPrefix + "adquirir" }
 ]},
 { title: "🔖 Atajos", highlight_label: "Nuevo",
@@ -129,6 +127,25 @@ rows: [
 { header: "🚄 Velocidad", title: "🔓 Para: Todos", description: "Selecciona esto si deseas saber la rapidez del bot", id: usedPrefix + "ping" },
 { header: "🥺​ Desmutear", title: "🔐 Para: Admins", description: "Quita el silencio a alguien del grupo(ya no le borrara mensajes)", id: usedPrefix + "unmute2" }
 ]},
+{ title: "👾 Comandos Free Fire", highlight_label: "Nuevo",
+rows: [
+{ header: "🎲 Donador de sala", title: "🔐 Para: Admins", description: "Escoge dos donadores al azar, uno para primera sala y otro en caso de tercera sala", id: usedPrefix + "donarsala" },
+{ header: "📋 Lista 4 vs 4", title: "🔐 Para: Admins", description: "Tira una lista de 4 vs 4 para rellenar", id: usedPrefix + "4vs4" },
+{ header: "🏷️ Etiqueta general", title: "🔐 Para: Admins", description: "El bot menciona a todo el grupo", id: usedPrefix + "todos" },
+{ header: "👩‍🦰📋 Interna femenina", title: "🔐 Para: Admins", description: "Tira una lista de interna femenina para rellenar", id: usedPrefix + "internafem" },
+{ header: "👨‍🦰📋​ Interna masculina", title: "🔐 Para: Admins", description: "Tira una lista de interna masculina para rellenar", id: usedPrefix + "internamasc" },
+{ header: "👩‍🦰👨‍🦰📋​ Interna mixta", title: "🔐 Para: Admins", description: "Tira una lista de interna mixta para rellenar", id: usedPrefix + "internamixta" },
+{ header: "🔓​ Abrir grupo", title: "🔐 Para: Admins", description: "Todos pueden hablar en el grupo", id: usedPrefix + "grupo abrir" },
+{ header: "🔐​ Cerrar el grupo", title: "🔐 Para: Admins", description: "Solo admins pueden hablar en el grupo", id: usedPrefix + "grupo cerrar" }
+]},
+{ title: "🗂️ Configuracion Grupos", highlight_label: "Popular",
+rows: [
+{ header: "🫶 Activar bienvenidas", title: "🔐 Para: Admins", description: "Activa la bienvenida del grupo", id: usedPrefix + "on welcome" },
+{ header: "👋 Desactivar Bienvenidas", title: "🔐 Para: Admins", description: "Desactiva la bienvenida del grupo", id: usedPrefix + "off welcome" },
+{ header: "🤐 Activar Modo admin", title: "🔐 Para: Admins", description: "Activa el bot para que solo puedan usarlo los admins", id: usedPrefix + "on modoadmin" },
+{ header: "🤗​ Desactivar moodo admin", title: "🔐 Para: Admins", description: "Activa el bot para que pueda usarlo todo el grupo", id: usedPrefix + "off modoadmin" }
+]},
+
 { title: "Ⓜ️ Menú", highlight_label: "Popular",
 rows: [
 { header: "⭐ Menú completo", title: "", description: "Visita todos los comandos", id: usedPrefix + "allmenu" }

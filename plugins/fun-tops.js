@@ -319,6 +319,14 @@ let top = `*EL DONADOR DE SALA SERÁ ${user(f)}📣*
 *EN CASO DE TERCERA SALA DONARÁ ${user(g)}📣*`
 m.reply(top, null, { mentions: conn.parseMention(top) })}
 
+if (command == 'ganadorrandom') {
+let top = `*🎉🎊EL GANADOR DEL SORTEO DE HOY HA SIDO ${user(f)}*
+*¡¡¡¡FELICIDADES!!!!🎊🎉*
+
+*EN CASO DE NO PRESENTARSE EL SEGUNDO GANADOR ES ${user(h)}*
+*Y EN CASO NINGUNO HAYA RECLAMADO SU PREMIO EL TERCER GANADOR ES ${user(g)}*`
+m.reply(top, null, { mentions: conn.parseMention(top) })}
+
 if (command == 'topparejas') {
 let top = `*_😍 Las 5 maravillosas parejas del grupo 😍_*
     
@@ -358,7 +366,7 @@ Genial! 💝, están de Luna de miel 🥵✨❤️‍🔥`
 m.reply(top, null, { mentions: conn.parseMention(top) })}
   
 }
-handler.help = handler.command = ['topgays', 'topotakus', 'topintegrantes', 'topintegrante', 'toplagrasa', 'topgrasa', 'toppanafrescos', 'toppanafresco', 'topshiposters', 'topshipost', 'toppajer@s', 'toplindos', 'toplind@s', 'topput@s', 'topfamosos', 'topfamos@s', 'topparejas', 'top5parejas', 'topf', 'topif', 'donarsala' ]
+handler.help = handler.command = ['topgays', 'topotakus', 'topintegrantes', 'topintegrante', 'toplagrasa', 'topgrasa', 'toppanafrescos', 'toppanafresco', 'topshiposters', 'topshipost', 'toppajer@s', 'toplindos', 'toplind@s', 'topput@s', 'topfamosos', 'topfamos@s', 'topparejas', 'top5parejas', 'topf', 'topif', 'donarsala', 'ganadorrandom' ]
 handler.tags = ['games']
 handler.group = true
 export default handler  

@@ -18,7 +18,6 @@ let i = ps.getRandom()
 let j = ps.getRandom()
 
 if (command == 'topgays') {
-let vn = './media/gay2.mp3'
 let top = `*🌈TOP 10 GAYS/LESBIANAS DEL GRUPO🌈*
     
 *_1.- 🏳️‍🌈 ${user(a)}_* 🏳️‍🌈
@@ -47,7 +46,6 @@ type: 'audioMessage',
 ptt: true })}
     
 if (command == 'topotakus') {
-let vn = './media/otaku.mp3'
 let top = `*🌸 TOP 10 OTAKUS DEL GRUPO 🌸*
     
 *_1.- 💮 ${user(a)}_* 💮
@@ -319,12 +317,8 @@ let top = `*EL DONADOR DE SALA SERÁ ${user(f)}📣*
 *EN CASO DE TERCERA SALA DONARÁ ${user(g)}📣*`
 m.reply(top, null, { mentions: conn.parseMention(top) })}
 
-if (command == 'ganadorrandom') {
-let top = `*🎉🎊EL GANADOR DEL SORTEO DE HOY HA SIDO ${user(f)}*
-*¡¡¡¡FELICIDADES!!!!🎊🎉*
-
-*EN CASO DE NO PRESENTARSE EL SEGUNDO GANADOR ES ${user(h)}*
-*Y EN CASO NINGUNO HAYA RECLAMADO SU PREMIO EL TERCER GANADOR ES ${user(g)}*`
+if (command == '3ganadores') {
+let top = `*🎉🎊EL GANADOR DEL SORTEO DE HOY HA SIDO ${user(f)}🎉🎊*\n*🎉🎊¡¡¡¡FELICIDADES!!!!🎊🎉*\n\n*EN CASO DE NO PRESENTARSE EL SEGUNDO GANADOR ES ${user(h)}*\n*Y EN CASO NINGUNO HAYA RECLAMADO SU PREMIO EL TERCER GANADOR ES ${user(g)}*`
 m.reply(top, null, { mentions: conn.parseMention(top) })}
 
 if (command == 'topparejas') {
@@ -366,7 +360,7 @@ Genial! 💝, están de Luna de miel 🥵✨❤️‍🔥`
 m.reply(top, null, { mentions: conn.parseMention(top) })}
   
 }
-handler.help = handler.command = ['topgays', 'topotakus', 'topintegrantes', 'topintegrante', 'toplagrasa', 'topgrasa', 'toppanafrescos', 'toppanafresco', 'topshiposters', 'topshipost', 'toppajer@s', 'toplindos', 'toplind@s', 'topput@s', 'topfamosos', 'topfamos@s', 'topparejas', 'top5parejas', 'topf', 'topif', 'donarsala', 'ganadorrandom' ]
+handler.help = handler.command = ['topgays', 'topotakus', 'topintegrantes', 'topintegrante', 'toplagrasa', 'topgrasa', 'toppanafrescos', 'toppanafresco', 'topshiposters', 'topshipost', 'toppajer@s', 'toplindos', 'toplind@s', 'topput@s', 'topfamosos', 'topfamos@s', 'topparejas', 'top5parejas', 'topf', 'topif', 'donarsala', '3ganadores' ]
 handler.tags = ['games']
 handler.group = true
 export default handler  

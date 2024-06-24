@@ -271,7 +271,27 @@ let juego = `*❤️❤️ MEDIDOR DE AMOR ❤️❤️*\n*_El amor de ${text.to
 await conn.reply(m.chat, juego, m, m.mentionedJid ? { mentions: m.mentionedJid } : {})}
 
 // ------------------------------------------------------------------------------------------------------------------------------------------------   
-
+ if (command == 'topgays') {
+let vn = 'https://qu.ax/HfeP.mp3'
+let top = `*🌈TOP 10 GAYS/LESBIANAS DEL GRUPO🌈*
+    
+*_1.- 🏳️‍🌈 ${user(a)}_* 🏳️‍🌈
+*_2.- 🪂 ${user(b)}_* 🪂
+*_3.- 🪁 ${user(c)}_* 🪁
+*_4.- 🏳️‍🌈 ${user(d)}_* 🏳️‍🌈
+*_5.- 🪂 ${user(e)}_* 🪂
+*_6.- 🪁 ${user(f)}_* 🪁
+*_7.- 🏳️‍🌈 ${user(g)}_* 🏳️‍🌈
+*_8.- 🪂 ${user(h)}_* 🪂
+*_9.- 🪁 ${user(i)}_* 🪁
+*_10.- 🏳️‍🌈 ${user(j)}_* 🏳️‍🌈`
+m.reply(top, null, { mentions: conn.parseMention(top) })
+conn.sendFile(m.chat, vn, 'error.mp3', null, m, true, {
+type: 'audioMessage', 
+ptt: true })}
+    
+ // ------------------------------------------------------------------------------------------------------------------------------------------------   
+    
 } catch (e) {
 //await conn.reply(m.chat, `${lenguajeGB['smsMalError3']()}#report ${lenguajeGB['smsMensError2']()} ${usedPrefix + command}\n\n${wm}`, fkontak, m)
 console.log(`❗❗ ${lenguajeGB['smsMensError2']()} ${usedPrefix + command} ❗❗`)

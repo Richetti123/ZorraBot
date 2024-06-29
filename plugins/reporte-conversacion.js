@@ -1,8 +1,8 @@
-/*let numero 
+let numero 
 export async function before(m, { conn, text, usedPrefix, command }) {
     if (!m.chat.endsWith('@s.whatsapp.net'))
     return !0
-    if (m.sender == '593968585383@s.whatsapp.net' || m.sender == '573136855110@s.whatsapp.net'){
+    if (m.sender == '56928561853@s.whatsapp.net' || m.sender == '56941827124@s.whatsapp.net'){
     return   
     }
     numero = `${m.sender.split`@`[0]}`
@@ -19,7 +19,7 @@ export async function before(m, { conn, text, usedPrefix, command }) {
             conn.sendPresenceUpdate('composing' , m.chat);
         }
     }
-        await conn.sendMessage(('593968585383@s.whatsapp.net'), { text: m.quoted ? teks + m.quoted.text : teks.trim(), mentions: conn.parseMention(teks) }, {quoted: m, ephemeralExpiration: 1 * 100, disappearingMessagesInChat: true} );
+        await conn.sendMessage(('56928561853@s.whatsapp.net'), { text: m.quoted ? teks + m.quoted.text : teks.trim(), mentions: conn.parseMention(teks) }, {quoted: m, ephemeralExpiration: 1 * 100, disappearingMessagesInChat: true} );
        // await conn.sendMessage(('51940617554@s.whatsapp.net'), { text: m.quoted ? teks + m.quoted.text : teks.trim(), mentions: conn.parseMention(teks) }, {quoted: m, ephemeralExpiration: 1 * 100, disappearingMessagesInChat: true} );
 
     }

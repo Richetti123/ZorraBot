@@ -26,6 +26,7 @@ import { mongoDB, mongoDBV2 } from './lib/mongoDB.js'
 import store from './lib/store.js'
 import readline from 'readline'
 import NodeCache from 'node-cache'
+const { proto} = (await import('@whiskeysockets/baileys')).default;
 const { DisconnectReason, useMultiFileAuthState, MessageRetryMap, fetchLatestBaileysVersion, makeCacheableSignalKeyStore, jidNormalizedUser, PHONENUMBER_MCC } = await import('@whiskeysockets/baileys')
 const { CONNECTING } = ws
 const { chain } = lodash
@@ -48,7 +49,7 @@ global.timestamp = { start: new Date }
 const __dirname = global.__dirname(import.meta.url);
 
 global.opts = new Object(yargs(process.argv.slice(2)).exitProcess(false).parse());
-global.prefix = new RegExp('^[' + (opts['prefix'] || '*/i!#$%+£¢€¥^°=¶∆×÷π√✓©®&.\\-.@Aa').replace(/[|\\{}()[\]^$+*.\-\^]/g, '\\$&') + ']');
+global.prefix = new RegExp('^[' + (opts['prefix'] || '*/i!#$%+£¢€¥^°=¶∆×÷π√✓©®:;?&.\\-.@aA').replace(/[|\\{}()[\]^$+*.\-\^]/g, '\\$&') + ']');
 
 global.db = new Low(/https?:\/\//.test(opts['db'] || '') ? new cloudDBAdapter(opts['db']) : new JSONFile(`${opts._[0] ? opts._[0] + '_' : ''}database.json`));
 
@@ -162,19 +163,33 @@ if (!/^[1-2]$/.test(opcion)) {
 console.log(chalk.bold.redBright(mid.methodCode11(chalk)))
 }} while (opcion !== '1' && opcion !== '2' || fs.existsSync(`./${authFile}/creds.json`))
 }
-
-const filterStrings = [
-"Q2xvc2luZyBzdGFsZSBvcGVu", // "Closing stable open"
-"Q2xvc2luZyBvcGVuIHNlc3Npb24=", // "Closing open session"
-"RmFpbGVkIHRvIGRlY3J5cHQ=", // "Failed to decrypt"
-"U2Vzc2lvbiBlcnJvcg==", // "Session error"
-"RXJyb3I6IEJhZCBNQUM=", // "Error: Bad MAC" 
-"RGVjcnlwdGVkIG1lc3NhZ2U=" // "Decrypted message" 
-]
-
+  
 console.info = () => {} 
 console.debug = () => {} 
-['log', 'warn', 'error'].forEach(methodName => redefineConsoleMethod(methodName, filterStrings))
+const originalConsoleWarn = console.warn
+console.warn = function() {
+const message = arguments[0]
+if (typeof message === 'string' && (message.includes(atob("Q2xvc2luZyBzdGFsZSBvcGVu")) || message.includes(atob("Q2xvc2luZyBvcGVuIHNlc3Npb24=")))) {
+arguments[0] = ""
+}
+originalConsoleWarn.apply(console, arguments)
+}
+const originalConsoleError = console.error
+console.error = function() {
+const message = arguments[0]
+if (typeof message === 'string' && (message.includes(atob("RmFpbGVkIHRvIGRlY3J5cHQ=")) || message.includes(atob("U2Vzc2lvbiBlcnJvcg==")))) {
+arguments[0] = ""
+}
+originalConsoleError.apply(console, arguments)
+}
+const originalConsoleLog = console.log
+console.log = function() {
+const message = arguments[0]
+if (typeof message === 'string' && (message.includes(atob("RXJyb3I6IEJhZCBNQUM=")))) {
+console.log = () => {} //arguments[0] = ""
+}
+originalConsoleLog.apply(console, arguments)
+}
 
 const connectionOptions = {
 logger: pino({ level: 'silent' }),
@@ -234,6 +249,8 @@ if (global.obtenerQrWeb === 1) (await import('./server.js')).default(global.conn
 
 async function getMessage(key) {
 if (store) {
+//const msg = store.loadMessage(key.remoteJid, key.id)
+//return msg.message
 } return {
 conversation: 'SimpleBot',
 }}
@@ -256,6 +273,10 @@ console.log(chalk.bold.yellow(mid.mCodigoQR))}
 if (connection == 'open') {
 console.log(chalk.bold.greenBright(mid.mConexion))}
 let reason = new Boom(lastDisconnect?.error)?.output?.statusCode
+if (reason == 405) {
+await fs.unlinkSync("./GataBotSession/" + "creds.json")
+console.log(chalk.bold.redBright(mid.mConexionOFF)) 
+process.send('reset')}
 if (connection === 'close') {
 if (reason === DisconnectReason.badSession) {
 console.log(chalk.bold.cyanBright(lenguajeGB['smsConexionOFF']()))
@@ -425,7 +446,7 @@ return file.startsWith('pre-key-')
 })
 prekey = [...prekey, ...filesFolderPreKeys]
 filesFolderPreKeys.forEach(files => {
-unlinkSync(`./MichiBot/${files}`)
+unlinkSync(`./GataBotSession/${files}`)
 })
 } 
 
@@ -467,16 +488,6 @@ console.log(chalk.bold.red(`${lenguajeGB.smspurgeOldFiles3()} ${file} ${lenguaje
 console.log(chalk.bold.green(`${lenguajeGB.smspurgeOldFiles1()} ${file} ${lenguajeGB.smspurgeOldFiles2()}`))
 } }) }
 }) }) }) }
-
-function redefineConsoleMethod(methodName, filterStrings) {
-const originalConsoleMethod = console[methodName]
-console[methodName] = function() {
-const message = arguments[0]
-if (typeof message === 'string' && filterStrings.some(filterString => message.includes(atob(filterString)))) {
-arguments[0] = ""
-}
-originalConsoleMethod.apply(console, arguments)
-}}
 
 setInterval(async () => {
 if (stopped === 'close' || !conn || !conn.user) return

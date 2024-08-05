@@ -1,20 +1,23 @@
 import fg from 'api-dylux' 
 import axios from 'axios'
 import cheerio from 'cheerio'
+import { tiktokdl } from '../lib/tiktok.js';
 import { tiktok } from "@xct007/frieren-scraper";
-let generateWAMessageFromContent = (await import(global.baileys)).default
-import { tiktokdl } from '@bochilteam/scraper'
+
 let handler = async (m, { conn, text, args, usedPrefix, command}) => {
 if (!text) return conn.reply(m.chat, `${lenguajeGB['smsAvisoMG']()}${mid.smsTikTok2}\n*${usedPrefix + command} https://vm.tiktok.com/ZM6n8r8Dk/*`, fkontak,  m)
 if (!/(?:https:?\/{2})?(?:w{3}|vm|vt|t)?\.?tiktok.com\/([^\s&]+)/gi.test(text)) return conn.reply(m.chat, `${lenguajeGB['smsAvisoFG']()}${mid.smsTikTok3}`, fkontak,  m)  
-await conn.reply(m.chat, `${lenguajeGB['smsAvisoEG']()}${mid.smsTikTok4}`, fkontak,  m) 
+await conn.reply(m.chat, `${lenguajeGB['smsAvisoEG']()}${mid.smsTikTok4}`, fkontak,  m)
 try {
-const dataF = await tiktok.v1(args[0])
-conn.sendFile(m.chat, dataF.play, 'tiktok.mp4', `⛱️ ${mid.user}\n*${nickname}*\n${description ? '\n⛱️ ${mid.smsYT14}\n*${description}*' : ''}\n${wm}`.trim(), m) 
-} catch (e1) {
-try {
-const tTiktok = await tiktokdlF(args[0])
-conn.sendFile(m.chat, tTiktok.video, 'tiktok.mp4', `⛱️ ${mid.user}\n*${nickname}*\n${description ? '\n⛱️ ${mid.smsYT14}\n*${description}*' : ''}\n${wm}`.trim(), m) 
+	const media = await tiktokdl(args[0]);
+	let description = media.desc;
+	let author = media.author;
+	conn.sendFile(m.chat, media.video.a, 'tiktok.mp4', `⛱️ ${mid.user}\n*${author}*\n${description ? `\n⛱️ ${mid.smsYT14}\n*${description}*` : ''}\n${wm}`.trim(), m);
+} catch (e) {
+	console.error(e);
+	try {
+		const tTiktok = await tiktokdlF(args[0])
+		conn.sendFile(m.chat, tTiktok.video, 'tiktok.mp4', `⛱️ ${mid.user}\n*${nickname}*\n${description ? '\n⛱️ ${mid.smsYT14}\n*${description}*' : ''}\n${wm}`.trim(), m) 
 } catch (e2) {
 try {
 let p = await fg.tiktok(args[0]) 

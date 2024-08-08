@@ -34,12 +34,11 @@ if (/^bot de etiquetas|bot para grupos|precios|info del bot|informacion|informac
 ${pickRandom([`Estos son los precios que tenemos por 3 grupos permanentes:
 S/10🇵🇪
 $3000🇨🇱
-$2000🇦🇷
+$3000🇦🇷
 $12000🇨🇴
-$60🇲🇽
+$80🇲🇽
 $3🇺🇸
-$25🇧🇴
-$25000🇵🇾
+$45🇧🇴
 $110🇺🇾`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
@@ -53,10 +52,9 @@ S/20🇵🇪
 $6000🇨🇱
 $6000🇦🇷
 $25000🇨🇴
-$120🇲🇽
+$150🇲🇽
 $6🇺🇸
-$50🇧🇴
-$45000🇵🇾
+$90🇧🇴
 $220🇺🇾`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
@@ -66,13 +64,12 @@ if (/^chips|chip chileno|chips chilenos|info del chip|informacion|informacion de
     let teks = `
 ${pickRandom([`Estos son los precios que tenemos para números de chip +56:
 S/6🇵🇪
-$1500🇨🇱
-$1500🇦🇷
+$2000🇨🇱
+$2000🇦🇷
 $8000🇨🇴
-$30🇲🇽
+$50🇲🇽
 $2🇺🇸
-$15🇧🇴
-$14000🇵🇾
+$25🇧🇴
 $60🇺🇾`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
@@ -82,13 +79,12 @@ if (/^APK de spam|APK para spam|precios|info del bot|informacion|informacion del
     let teks = `
 ${pickRandom([`Estos son los precios que tenemos para APK de spam:
 S/10🇵🇪
-$4000🇨🇱
+$3000🇨🇱
 $3000🇦🇷
-$14000🇨🇴
-$60🇲🇽
-$4🇺🇸
-$30🇧🇴
-$25000🇵🇾
+$12000🇨🇴
+$80🇲🇽
+$3🇺🇸
+$45🇧🇴
 $110🇺🇾`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
@@ -98,13 +94,12 @@ if (/^APK de Spotify premium|precios|info del bot|informacion|informacion del bo
     let teks = `
 ${pickRandom([`Estos son los precios que tenemos para APK de Spotify premium:
 S/10🇵🇪
-$4000🇨🇱
+$3000🇨🇱
 $3000🇦🇷
-$14000🇨🇴
-$60🇲🇽
-$4🇺🇸
-$30🇧🇴
-$25000🇵🇾
+$12000🇨🇴
+$80🇲🇽
+$3🇺🇸
+$45🇧🇴
 $110🇺🇾`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
@@ -115,13 +110,12 @@ if (/^APK de seguidores|APK para seguidores|precios|info del bot|informacion|inf
     let teks = `
 ${pickRandom([`Estos son los precios que tenemos para APK de seguidores:
 S/10🇵🇪
-$4000🇨🇱
+$3000🇨🇱
 $3000🇦🇷
-$14000🇨🇴
-$60🇲🇽
-$4🇺🇸
-$30🇧🇴
-$25000🇵🇾
+$12000🇨🇴
+$80🇲🇽
+$3🇺🇸
+$45🇧🇴
 $110🇺🇾`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
@@ -286,14 +280,8 @@ conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 if (/^bolivia🇧🇴|🇧🇴$/i.test(m.text) ) { //sin prefijo 
     let teks = `
 ${pickRandom([`🇧🇴 BOLIVIA
-
-🏦 TIGO MONEY
-77348066
-JOSELIN OSINAGA LOPEZ
-
-🏦 YAPE:
-76852005
-ANA AMADOR`])}
+INGRESE AL SIGUIENTE ENLACE PARA RECIBIR EL CODIGO QR PARA REALIZAR EL PAGO:
+https://telegra.ph/file/a2e43b0140c74a737d502.png`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
@@ -355,38 +343,21 @@ conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 if (/^uruguay|uruguay🇺🇾|🇺🇾$/i.test(m.text) ) { //sin prefijo 
     let teks = `
 ${pickRandom([`URUGUAY 🇺🇾
+INGRESAR A LA APP DE PREX Y A TRANSFERIR A OTROS PAISES(PERU) Y TRANSFERIR EL PRECIO QUE SALE EN SOLES
 
 PREX
-Gaston Juarez
-1691414`])}
+Marcelo Gonzales
+12156998`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
 }
 
-if (/^paraguay|paraguay🇵🇾|🇵🇾$/i.test(m.text) ) { //sin prefijo 
-    let teks = `
-${pickRandom([`🇵🇾 PARAGUAY 🇵🇾
-TITULAR: EVELYN FUNES
-
-🏦 TIGO MONEY
-+595985316988
-
-🏦 BANCO VISIÓN
-Nro: 3978084`])}
-`.trim()
-conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
-
-}
 
 if (/^paypal|estados unidos🇺🇸|🇺🇸$/i.test(m.text) ) { //sin prefijo 
     let teks = `
 ${pickRandom([`🇺🇸 PAY PAL
-sangucher@gmail.com
-
-
-💥 EN NOTA PONER:
-Declaro que este dinero enviado desde NOMBRE DEL CLIENTE  hacia Marcelo Jair Gonzales Ramos es totalmente legal, y declaro que el pago no es reembolsable bajo ninguna circunstancia. Soy el titular responsable de este envío de USD.`])}
+https://paypal.me/Richetti123`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
@@ -405,9 +376,14 @@ conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 
 if (/^argentina|argentina🇦🇷|🇦🇷$/i.test(m.text) ) { //sin prefijo 
     let teks = `
-${pickRandom([`🇦🇷Argentina
-0000003100060129363558
-Sofi Ortiz`])}
+${pickRandom([`CBU 🇦🇷
+0000013000032232325985
+
+🏷️Alias
+44713108.PREX 
+
+👤Nombre:
+Sofía ortiz`])}
 `.trim()
 conn.reply(m.chat, teks, m, { mentions: { mentionedJid: [m.sender] }})
 

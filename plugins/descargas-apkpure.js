@@ -1,5 +1,5 @@
 import axios from 'axios';
-import cheerio from 'cheerio';
+import * as cheerio from 'cheerio';
 
 const apkpureApi = 'https://apkpure.com/api/v2/search?q=';
 const apkpureDownloadApi = 'https://apkpure.com/api/v2/download?id=';

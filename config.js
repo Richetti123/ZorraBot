@@ -2,7 +2,7 @@ import { watchFile, unwatchFile } from "fs"
 import chalk from "chalk"
 import { fileURLToPath } from "url"
 import fs from "fs"
-import cheerio from "cheerio"
+import * as cheerio from 'cheerio'
 import fetch from "node-fetch"
 import axios from "axios"
 import moment from "moment-timezone"
@@ -125,9 +125,9 @@ global.moment = moment
 // [ES] > Agregate a ti, colaboradores o ayudates, aparecerá en el comando de lista de contactos.
 // [EN] > Adding yourself, collaborators or helpers will appear in the contact list command.
 global.official = [ // Agregate si eres Owner
-["593968263524", 'MichiBot', 1], 
-["5492266466080", 'MichiBot', 1],  
-["5521989092076", 'MichiBot', 1]]
+["56928561853", 'MichiBot', 1], 
+["56928561853", 'MichiBot', 1],  
+["56928561853", 'MichiBot', 1]]
 
 global.mail = '' // Add email
 global.desc = '' // Add short description (20 caractres max)

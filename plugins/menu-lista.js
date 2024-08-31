@@ -109,17 +109,13 @@ let menu = `
 ⊜ *Pasatiempo(s)* ➺ ${user.pasatiempo === 0 ? '*Sin Registro*' : user.pasatiempo + '\n'}
 ⊜ *Experiencia ➟* ${exp} ⚡
 ⊜ *Diamantes ➟* ${limit} 💎
-⊜ *MichiCoins ➟* ${money} 🐈
+⊜ *ZorraCoins ➟* ${money} 🐈
 ⊜ *Tokens ➟* ${joincount} 🪙`.trim()
       
 const buttonParamsJson = JSON.stringify({
 title: "VER COMANDOS",
 description: "Infórmate por medios oficiales sobre MichiBot",
 sections: [
-{ title: "ℹ️ Información", highlight_label: "Popular",
-rows: [
-{ header: "💸 Comprar", title: "🔓 Para: Todos", description: "MichiBot se mantiene funcionando gracias a que lo compran, tu tambien puedes adquirirlo", id: usedPrefix + "adquirir" }
-]},
 { title: "🔖 Atajos", highlight_label: "Nuevo",
 rows: [
 { header: "🤫 Mutear", title: "🔐 Para: Admins", description: "Silencia a alguien en el grupo(el bot le borrara todos los mensajes)", id: usedPrefix + "mute2" },
@@ -186,7 +182,7 @@ let menu = `${lenguajeGB['smsConfi2']()} *${user.genero === 0 ? '👤' : user.ge
 ⊜ *Pasatiempo(s)* ➺ ${user.pasatiempo === 0 ? '*Sin Registro*' : user.pasatiempo + '\n'}
 ⊜ *Experiencia ➟* ${exp} ⚡
 ⊜ *Diamantes ➟* ${limit} 💎
-⊜ *MichiCoins ➟* ${money} 🐈
+⊜ *ZorraCoins ➟* ${money} 🐈
 ⊜ *Tokens ➟* ${joincount} 🪙
 
 *╭━〔 🐈 OPCIONES DE MENU 🐈 〕⬣*
